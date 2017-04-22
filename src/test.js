@@ -1,5 +1,5 @@
 import test from 'tape';
-import { add, sub, addf, curry } from './index';
+import { add, sub, addf, curry, sumSpread } from './index';
 
 test( 'add fn', function ( test ) {
   const actual = add( 1, 2 );
@@ -33,6 +33,15 @@ test( 'curry fn', function ( test ) {
   let expected = 11;
 
   test.equal( actual, expected, 'should take a binary function in this case (add) and an argument (5) and return a function that takes a second argument (6) and (add) the two arguments' );
+
+  test.end();
+});
+
+test( 'sumSpread fn', function ( test ) {
+  const actual = sumSpread( 1, 2, 3 );
+  let expected = 6;
+
+  test.equal( actual, expected, 'should total all numbers provided' );
 
   test.end();
 });

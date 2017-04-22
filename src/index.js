@@ -17,3 +17,13 @@ export function curry(binary, first) {
         return binary(first, second);
     };
 }
+
+export let sumSpread = function ( ...values ) {
+  let total = 0;
+
+  values.forEach(function(n){
+  total += n;
+  });
+
+  return total;
+};
